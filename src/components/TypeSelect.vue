@@ -1,4 +1,6 @@
-<script setup></script>
+<script setup>
+defineEmits(["personal", "work", "social", "important"]);
+</script>
 <template>
   <div>
     <div class="flex flex-col mb-4">
@@ -13,22 +15,34 @@
     </div>
     <i class="bi bi-tag text-gray-500 font-semibold"> Labels</i>
     <div class="font-bold">
-      <div class="flex text-green-500 hover:bg-green-200 hover:rounded-3xl">
+      <button
+        class="flex text-green-500 hover:bg-green-200 hover:rounded-3xl"
+        @click="$emit('personal')"
+      >
         <i class="bi bi-dot"></i>
         <p>Personal</p>
-      </div>
-      <div class="flex text-violet-500 hover:bg-violet-200 hover:rounded-3xl">
+      </button>
+      <button
+        class="flex text-violet-500 hover:bg-violet-200 hover:rounded-3xl"
+        @click="$emit('work')"
+      >
         <i class="bi bi-dot"></i>
         <p>Work</p>
-      </div>
-      <div class="flex text-blue-500 hover:bg-blue-200 hover:rounded-3xl">
+      </button>
+      <button
+        class="flex text-blue-500 hover:bg-blue-200 hover:rounded-3xl"
+        @click="$emit('social')"
+      >
         <i class="bi bi-dot"></i>
         <p>Social</p>
-      </div>
-      <div class="flex text-orange-500 hover:bg-orange-200 hover:rounded-3xl">
+      </button>
+      <button
+        class="flex text-orange-500 hover:bg-orange-200 hover:rounded-3xl"
+        @click="$emit('important')"
+      >
         <i class="bi bi-dot"></i>
         <p>Important</p>
-      </div>
+      </button>
     </div>
   </div>
 </template>

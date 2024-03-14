@@ -27,7 +27,12 @@ function emptyToDoLists() {
   <div class="flex">
     <div class="px-8">
       <ColumnAdd></ColumnAdd>
-      <TypeSelect></TypeSelect>
+      <TypeSelect
+        @personal="personal"
+        @work="work"
+        @social="social"
+        @important="important"
+      ></TypeSelect>
     </div>
     <div class="h-screen border-2 border-gray-300"></div>
     <ColumnView v-for="list in todoStore.lists" :taskList="list"></ColumnView>
